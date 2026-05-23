@@ -1,0 +1,8 @@
+.mui-avatar {
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.mui-avatar:hover {
+  transform: scale(1.05);
+}

@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout/MainLayout'
 import Home from './pages/Home/Home'
@@ -10,9 +11,17 @@ import Register from './pages/Register/Register'
 import Appointments from './pages/Appointments/Appointments'
 import MedicalRecords from './pages/MedicalRecords/MedicalRecords'
 import Settings from './pages/Settings/Settings'
+import SplashScreen from './components/SplashScreen/SplashScreen'
 import './App.css'
 
 function App() {
+  const [splashDone, setSplashDone] = useState(false)
+  const handleSplashFinish = useCallback(() => setSplashDone(true), [])
+
+  if (!splashDone) {
+    return <SplashScreen onFinish={handleSplashFinish} />
+  }
+
   return (
     <BrowserRouter>
       <Routes>

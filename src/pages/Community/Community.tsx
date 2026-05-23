@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import { Heart, MessageCircle, Share2, Search } from 'lucide-react'
+import UserAvatar, { UserAvatarType } from '../../components/UserAvatar/UserAvatar'
 import './Community.css'
 
-const posts = [
+const posts: {
+  id: number; author: string; avatarType: UserAvatarType; time: string
+  tag: string; tagColor: string; tagBg: string; content: string
+  likes: number; comments: number; liked: boolean
+}[] = [
   {
     id: 1,
     author: 'Sarah M.',
-    avatar: '👩',
+    avatarType: 'young-woman',
     time: '2h ago',
     tag: 'Tips',
     tagColor: '#6366f1',
@@ -19,7 +24,7 @@ const posts = [
   {
     id: 2,
     author: 'Dr. Amina K.',
-    avatar: '👩‍⚕️',
+    avatarType: 'female-doctor',
     time: '4h ago',
     tag: 'Medical',
     tagColor: '#10b981',
@@ -32,12 +37,12 @@ const posts = [
   {
     id: 3,
     author: 'Lena T.',
-    avatar: '🤰',
+    avatarType: 'pregnant-woman',
     time: '6h ago',
     tag: 'Question',
     tagColor: '#f59e0b',
     tagBg: '#fffbeb',
-    content: 'Has anyone tried the kick counter feature? I\'ve been logging daily and it\'s so reassuring to see the patterns!',
+    content: "Has anyone tried the kick counter feature? I've been logging daily and it's so reassuring to see the patterns!",
     likes: 27,
     comments: 12,
     liked: false,
@@ -45,7 +50,7 @@ const posts = [
   {
     id: 4,
     author: 'Mia R.',
-    avatar: '👶',
+    avatarType: 'young-woman',
     time: '1d ago',
     tag: 'Story',
     tagColor: '#ec4899',
@@ -58,10 +63,10 @@ const posts = [
 ]
 
 const groups = [
-  { id: 1, name: 'First Trimester Moms', members: 1240, emoji: '🌱' },
-  { id: 2, name: 'Second Trimester', members: 980, emoji: '🌸' },
-  { id: 3, name: 'Third Trimester', members: 760, emoji: '🌺' },
-  { id: 4, name: 'New Moms Support', members: 2100, emoji: '👶' },
+  { id: 1, name: 'First Trimester Moms', members: 1240, avatarType: 'pregnant-woman' as UserAvatarType },
+  { id: 2, name: 'Second Trimester',     members: 980,  avatarType: 'pregnant-woman' as UserAvatarType },
+  { id: 3, name: 'Third Trimester',      members: 760,  avatarType: 'pregnant-woman' as UserAvatarType },
+  { id: 4, name: 'New Moms Support',     members: 2100, avatarType: 'baby'           as UserAvatarType },
 ]
 
 export default function Community() {
@@ -106,7 +111,7 @@ export default function Community() {
             <div key={post.id} className="community__post">
               <div className="community__post-header">
                 <div className="community__post-author">
-                  <span className="community__post-avatar">{post.avatar}</span>
+                  <UserAvatar type={post.avatarType} size={42} className="community__post-avatar" />
                   <div>
                     <p className="community__post-name">{post.author}</p>
                     <p className="community__post-time">{post.time}</p>
@@ -145,7 +150,7 @@ export default function Community() {
         <div className="community__groups">
           {groups.map((group) => (
             <div key={group.id} className="community__group">
-              <span className="community__group-emoji">{group.emoji}</span>
+              <UserAvatar type={group.avatarType} size={48} className="community__group-avatar" />
               <div className="community__group-info">
                 <p className="community__group-name">{group.name}</p>
                 <p className="community__group-members">{group.members.toLocaleString()} members</p>

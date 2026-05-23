@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react'
+import logoImg from '../../assets/logimg.png'
 import './Login.css'
 
 export default function Login() {
@@ -22,13 +23,7 @@ export default function Login() {
 
       <div className="login__content">
         <div className="login__logo">
-          <svg viewBox="0 0 60 60" fill="none">
-            <circle cx="30" cy="30" r="30" fill="#eef2ff" />
-            <path d="M30 14c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16z" fill="#c7d2fe" />
-            <path d="M30 20c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z" fill="#818cf8" />
-            <path d="M26 30c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" fill="#ffffff" />
-            <path d="M30 10v4M30 46v4M10 30h4M46 30h4" stroke="#6366f1" strokeWidth="2" strokeLinecap="round" />
-          </svg>
+          <img src={logoImg} alt="Mother's Connect" className="login__logo-img" />
         </div>
 
         <h1 className="login__title">Welcome Back</h1>

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { Settings, ChevronRight, Bell, Shield, HelpCircle, LogOut, FileText, Calendar } from 'lucide-react'
+import logoImg from '../../assets/logimg.png'
 import './Profile.css'
 
 const menuItems = [
@@ -18,12 +19,7 @@ export default function Profile() {
     <div className="profile">
       <div className="profile__hero">
         <div className="profile__avatar">
-          <svg viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="40" r="40" fill="#fce7f3" />
-            <ellipse cx="40" cy="32" rx="14" ry="14" fill="#f9a8d4" />
-            <ellipse cx="40" cy="62" rx="20" ry="16" fill="#f9a8d4" />
-            <ellipse cx="40" cy="58" rx="12" ry="10" fill="#fce7f3" />
-          </svg>
+          <img src={logoImg} alt="Profile" className="profile__avatar-img" />
         </div>
         <h2 className="profile__name">Selam Tadesse</h2>
         <p className="profile__tag">24 Weeks Pregnant · 2nd Trimester</p>

@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import { Calendar, Clock, MapPin, Plus, Video } from 'lucide-react'
+import UserAvatar, { UserAvatarType } from '../../components/UserAvatar/UserAvatar'
 import './Appointments.css'
 
-const appointments = [
+const appointments: {
+  id: number; doctor: string; specialty: string; date: string; time: string
+  type: string; location: string; status: string; avatarType: UserAvatarType
+}[] = [
   {
     id: 1,
     doctor: 'Dr. Amina Kedir',
@@ -12,7 +16,7 @@ const appointments = [
     type: 'In-Person',
     location: 'Tikur Anbessa Hospital',
     status: 'upcoming',
-    avatar: '👩‍⚕️',
+    avatarType: 'female-doctor',
   },
   {
     id: 2,
@@ -23,7 +27,7 @@ const appointments = [
     type: 'Video Call',
     location: 'Online',
     status: 'upcoming',
-    avatar: '👨‍⚕️',
+    avatarType: 'male-doctor',
   },
   {
     id: 3,
@@ -34,7 +38,7 @@ const appointments = [
     type: 'In-Person',
     location: 'Tikur Anbessa Hospital',
     status: 'completed',
-    avatar: '👩‍⚕️',
+    avatarType: 'female-doctor',
   },
 ]
 
@@ -83,7 +87,7 @@ export default function Appointments() {
         {filtered.map((appt) => (
           <div key={appt.id} className="appointment-card">
             <div className="appointment-card__top">
-              <span className="appointment-card__avatar">{appt.avatar}</span>
+              <UserAvatar type={appt.avatarType} size={50} className="appointment-card__avatar" />
               <div className="appointment-card__info">
                 <p className="appointment-card__doctor">{appt.doctor}</p>
                 <p className="appointment-card__specialty">{appt.specialty}</p>
