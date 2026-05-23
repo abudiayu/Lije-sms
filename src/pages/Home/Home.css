@@ -1,0 +1,11 @@
+.home {
+  min-height: 100%;
+  background: #EEF2FF;
+  padding-top: 8px;
+}
+
+@media (min-width: 768px) {
+  .home {
+    padding-top: 0;
+  }
+}

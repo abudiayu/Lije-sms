@@ -1,0 +1,227 @@
+.pregnancy-card {
+  margin: 0 16px 16px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
+}
+
+.pregnancy-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pregnancy-card__info {
+  flex: 1;
+}
+
+.pregnancy-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.pregnancy-card__weeks {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.pregnancy-card__due {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+
+.pregnancy-card__progress-wrap {
+  width: 100%;
+}
+
+.pregnancy-card__progress-bar {
+  height: 8px;
+  background: #e0e7ff;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.pregnancy-card__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+  border-radius: 99px;
+  transition: width 0.6s ease;
+}
+
+.pregnancy-card__progress-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pregnancy-card__trimester {
+  font-size: 11px;
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.pregnancy-card__percent {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.pregnancy-card__illustration {
+  position: relative;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.pregnancy-card__illustration svg {
+  width: 100%;
+  height: auto;
+}
+
+.pregnancy-card__share {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  z-index: 1;
+}
+
+.pregnancy-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 16px;
+}
+
+.pregnancy-card__stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pregnancy-card__stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pregnancy-card__stat-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.pregnancy-card__stat-icon--blue {
+  background: #eef2ff;
+}
+
+.pregnancy-card__stat-icon--pink {
+  background: #fdf2f8;
+}
+
+.pregnancy-card__stat-icon--green {
+  background: #ecfdf5;
+}
+
+.pregnancy-card__stat-label {
+  font-size: 9px;
+  color: #94a3b8;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.pregnancy-card__stat-value {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 2px;
+}
+
+.pregnancy-card__btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  letter-spacing: 0.3px;
+}
+
+.pregnancy-card__btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.pregnancy-card__btn:active {
+  transform: translateY(0);
+}
+
+@media (min-width: 480px) {
+  .pregnancy-card {
+    margin: 0 20px 20px;
+    padding: 24px;
+  }
+
+  .pregnancy-card__illustration {
+    width: 120px;
+  }
+
+  .pregnancy-card__weeks {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 768px) {
+  .pregnancy-card {
+    margin: 0 32px 24px;
+    padding: 28px;
+  }
+
+  .pregnancy-card__title {
+    font-size: 18px;
+  }
+
+  .pregnancy-card__weeks {
+    font-size: 26px;
+  }
+
+  .pregnancy-card__illustration {
+    width: 140px;
+  }
+
+  .pregnancy-card__stat-label {
+    font-size: 11px;
+  }
+
+  .pregnancy-card__stat-value {
+    font-size: 14px;
+  }
+}

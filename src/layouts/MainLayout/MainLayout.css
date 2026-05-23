@@ -1,0 +1,35 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: #EEF2FF;
+  position: relative;
+}
+
+.main-layout__content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 80px;
+}
+
+@media (min-width: 768px) {
+  .main-layout {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .main-layout__content {
+    padding-bottom: 0;
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-layout {
+    grid-template-columns: 280px 1fr;
+  }
+}
