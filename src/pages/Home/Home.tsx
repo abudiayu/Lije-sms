@@ -14,7 +14,7 @@ export default function Home() {
       <PregnancyCard
         weeks={24}
         days={3}
-        dueDate="July 20, 2025"
+        dueDate="July 20, 2026"
         trimester={2}
         progress={60}
         babySize="21.5 cm"

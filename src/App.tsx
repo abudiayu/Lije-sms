@@ -12,6 +12,7 @@ import Appointments from './pages/Appointments/Appointments'
 import MedicalRecords from './pages/MedicalRecords/MedicalRecords'
 import Settings from './pages/Settings/Settings'
 import SplashScreen from './components/SplashScreen/SplashScreen'
+import { Error } from './pages/Error/Error'
 import './App.css'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="medical-records" element={<MedicalRecords />} />
           <Route path="settings" element={<Settings />} />
         </Route>
+        <Route path = "*" element = {<Error/>}/>      
       </Routes>
     </BrowserRouter>
   )
